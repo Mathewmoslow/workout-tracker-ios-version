@@ -1,0 +1,91 @@
+exercise_id,exercise_name,category,equipment,body_part
+EX001,Back Squat,Compound,Barbell,Legs
+EX002,Calf Raise,Isolation,Bodyweight,Calves
+EX003,Romanian Deadlift,Compound,Dumbbell,Hamstrings
+EX004,Single Leg RDL,Unilateral,Dumbbell,Hamstrings
+EX005,Halo Press,Combination,Kettlebell,Shoulders
+EX006,Reverse Nordic Curl,Isolation,Bodyweight,Hamstrings
+EX007,Push-up,Compound,Bodyweight,Chest
+EX008,Superman,Isolation,Bodyweight,Back
+EX009,Kettlebell Swing,Power,Kettlebell,Full Body
+EX010,Bench Dip,Isolation,Bench,Triceps
+EX011,Plank,Isometric,Bodyweight,Core
+EX012,Penguin Reach,Isolation,Bodyweight,Core
+EX013,Good Morning,Compound,Barbell,Hamstrings
+EX014,TRX Reverse Nordic Curl,Isolation,TRX,Hamstrings
+EX015,Bird Dog,Stability,Bodyweight,Core
+EX016,Lateral Step Down,Unilateral,Bodyweight,Legs
+EX017,Hammer Curl,Isolation,Dumbbell,Biceps
+EX018,Hip Thrust,Compound,Barbell,Glutes
+EX019,Glute Bridge,Isolation,Bodyweight,Glutes
+EX020,Seated Calf Raise,Isolation,Machine,Calves
+EX021,Sumo Squat,Compound,Barbell,Legs
+EX022,Deadlift,Compound,Barbell,Full Body
+EX023,Walking Lunge,Unilateral,Dumbbell,Legs
+EX024,Ball Slam,Power,Medicine Ball,Full Body
+EX025,Wall Ball,Power,Medicine Ball,Full Body
+EX026,Russian Twist,Rotation,Weight,Core
+EX027,Inverted Row,Pull,Barbell,Back
+EX028,Band Tricep Extension,Isolation,Band,Triceps
+EX029,Band Lateral Leg Raise,Isolation,Band,Glutes
+EX030,Bulgarian Split Squat,Unilateral,Dumbbell,Legs
+EX031,Pullover,Isolation,Dumbbell,Lats
+EX032,Farmer Carry,Carry,Dumbbell,Full Body
+EX033,Pistol Squat,Unilateral,TRX,Legs
+EX034,Lying Leg Curl,Isolation,Machine,Hamstrings
+EX035,Donkey Kick,Isolation,Band,Glutes
+EX036,Clamshell,Isolation,Band,Glutes
+EX037,Wall Sit,Isometric,Bodyweight,Legs
+EX038,V-up Ball Pass,Compound,Medicine Ball,Core
+EX039,Hollow Hold,Isometric,Bodyweight,Core
+EX040,Fire Hydrant,Isolation,Band,Glutes
+EX041,Mountain Climber,Cardio,Bodyweight,Core
+EX042,Chest Pass,Power,Medicine Ball,Chest
+EX043,Overhead Throw,Power,Medicine Ball,Full Body
+EX044,BOSU Squat to Press,Compound,BOSU,Full Body
+EX045,BOSU Pulse Squat,Isolation,BOSU,Legs
+EX046,Rear Deltoid Fly,Isolation,Dumbbell,Shoulders
+EX047,Incline Fly,Isolation,Band,Chest
+EX048,Around the World,Isolation,Dumbbell,Shoulders
+EX049,Lateral Walk,Lateral,Band,Glutes
+EX050,Bicep Curl,Isolation,Barbell,Biceps
+EX051,Arnold Press,Compound,Dumbbell,Shoulders
+EX052,Cable Fly,Isolation,Cable,Chest
+EX053,Cable Hip Abduction,Isolation,Cable,Glutes
+EX054,Cable Hip Adduction,Isolation,Cable,Adductors
+EX055,Cable Twist,Rotation,Cable,Core
+EX056,Cable Crunch,Isolation,Cable,Core
+EX057,Lat Pulldown,Pull,Cable,Back
+EX058,Stir the Pot,Stability,Ball,Core
+EX059,Step Up,Unilateral,Box,Legs
+EX060,Goblet Squat,Compound,Kettlebell,Legs
+EX061,Plank Shoulder Tap,Stability,Bodyweight,Core
+EX062,Wheelbarrow,Partner,Bodyweight,Full Body
+EX063,Partner Band Squat,Partner,Band,Legs
+EX064,Incline Push-up,Compound,Bench,Chest
+EX065,Overhead Squat,Compound,Barbell,Full Body
+EX066,Hamstring Rollout,Mobility,Foam Roller,Hamstrings
+EX067,Rowing Machine,Cardio,Machine,Full Body
+EX068,Ski Erg,Cardio,Machine,Full Body
+EX069,Butt Kicks,Warm-up,Bodyweight,Legs
+EX070,Side Lunges,Warm-up,Bodyweight,Legs
+EX071,Hip Rotation,Warm-up,Bodyweight,Hips
+EX072,Calf Stretch,Warm-up,Bodyweight,Calves
+EX073,Hamstring Squat,Warm-up,Bodyweight,Hamstrings
+EX074,Shoulder Circles,Warm-up,Bodyweight,Shoulders
+EX075,Shoulder Rolls,Warm-up,Bodyweight,Shoulders
+EX076,Contralateral Pickup,Functional,Dumbbell,Core
+EX077,Curtsy Lunge,Unilateral,Dumbbell,Legs
+EX078,Marching Plank,Stability,Bodyweight,Core
+EX079,Tricep Kickback,Isolation,Dumbbell,Triceps
+EX080,Pass Through Lunge,Mobility,Bodyweight,Legs
+EX081,High Pull,Power,Kettlebell,Full Body
+EX082,Push Press,Power,Barbell,Shoulders
+EX083,Jumping Jacks,Warm-up,Bodyweight,Full Body
+EX084,Inchworm Walkout,Mobility,Bodyweight,Full Body
+EX085,Box Push-up,Modified,Box,Chest
+EX086,Reverse Lunge,Unilateral,Bodyweight,Legs
+EX087,Reverse Crunch,Isolation,Bodyweight,Core
+EX088,Band Pull-apart,Isolation,Band,Back
+EX089,Leg Raise,Isolation,Bodyweight,Core
+EX090,Toss to Box,Power,Medicine Ball,Full Body

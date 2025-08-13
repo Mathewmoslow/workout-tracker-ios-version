@@ -1,0 +1,6 @@
+goal_id,client_id,goal_type,goal_description,target_value,target_date,status
+G001,CL001,Strength,Improve grip strength for deadlifts,135,2025-03-31,In Progress
+G002,CL001,Balance,Correct left side balance issues,100,2025-02-28,In Progress
+G003,CL001,Form,Master pistol squat form,1,2025-04-30,In Progress
+G004,CL001,Endurance,2-minute plank hold,120,2025-03-31,In Progress
+G005,CL001,Flexibility,Improve adductor flexibility,0,2025-02-28,Pending

@@ -1,0 +1,25 @@
+session_exercise_id,session_id,exercise_id,set_number,reps,weight,weight_unit,tempo,rest_seconds,equipment_notes,form_notes
+SE001,S001,EX001,1,10,75,lb,,,,"Great form"
+SE001,S001,EX001,2,12,75,lb,,,,
+SE001,S001,EX001,3,12,75,lb,,,,
+SE002,S001,EX002,1,10,75,lb,,,,
+SE002,S001,EX002,2,12,75,lb,,,,
+SE002,S001,EX002,3,12,75,lb,,,,
+SE003,S001,EX004,1,10,25,lb,,,,"Left side balance issues"
+SE003,S001,EX004,2,10,25,lb,,,,"Getting better"
+SE003,S001,EX004,3,10,25,lb,,,,"90% better by 3rd set"
+SE004,S001,EX005,1,12,15,lb,,,,
+SE004,S001,EX005,2,12,15,lb,,,,
+SE004,S001,EX005,3,12,15,lb,,,,
+SE005,S001,EX006,1,8,0,bw,,,,
+SE005,S001,EX006,2,12,0,bw,,,,
+SE005,S001,EX006,3,10,0,bw,,,,
+SE006,S001,EX007,1,10,0,bw,,,,"Knee push-ups"
+SE007,S001,EX008,1,10,0,bw,,,,
+SE008,S001,EX009,1,12,35,lb,,,,"Perfect form upright?"
+SE008,S001,EX009,2,10,35,lb,,,,
+SE008,S001,EX009,3,12,35,lb,,,,
+SE009,S001,EX010,1,15,0,bw,,,,
+SE010,S001,EX010,2,15,0,bw,,,,"Using 15lb bar then 25lb"
+SE011,S001,EX011,1,84,0,seconds,,,,"1:24 plank hold"
+SE012,S001,EX012,1,0,0,bw,ALAP,,,"As long as possible"

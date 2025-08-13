@@ -1,0 +1,709 @@
+[
+  {
+    "title": "Barbell Back Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings", "Core"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Barbell Front Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": ["Glutes", "Core"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Deadlift",
+    "category": "Back",
+    "primaryTargets": ["Hamstrings", "Glutes", "Back"],
+    "secondaryTargets": ["Core", "Traps"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Romanian Deadlift",
+    "category": "Legs",
+    "primaryTargets": ["Hamstrings", "Glutes"],
+    "secondaryTargets": ["Lower Back"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Bench Press",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": ["Triceps", "Shoulders"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Incline Bench Press",
+    "category": "Chest",
+    "primaryTargets": ["Upper Chest"],
+    "secondaryTargets": ["Triceps", "Shoulders"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Overhead Press",
+    "category": "Shoulders",
+    "primaryTargets": ["Shoulders"],
+    "secondaryTargets": ["Triceps", "Core"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Barbell Row",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Rhomboids"],
+    "secondaryTargets": ["Biceps", "Rear Delts"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Pull-ups",
+    "category": "Back",
+    "primaryTargets": ["Lats"],
+    "secondaryTargets": ["Biceps", "Core"],
+    "equipment": "Pull-up Bar"
+  },
+  {
+    "title": "Chin-ups",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Biceps"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Pull-up Bar"
+  },
+  {
+    "title": "Dumbbell Bench Press",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": ["Triceps", "Shoulders"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Dumbbell Shoulder Press",
+    "category": "Shoulders",
+    "primaryTargets": ["Shoulders"],
+    "secondaryTargets": ["Triceps"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Dumbbell Row",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Rhomboids"],
+    "secondaryTargets": ["Biceps"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Goblet Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Dumbbell"
+  },
+  {
+    "title": "Bulgarian Split Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Lunges",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings", "Calves"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Leg Press",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Machine"
+  },
+  {
+    "title": "Leg Curl",
+    "category": "Legs",
+    "primaryTargets": ["Hamstrings"],
+    "secondaryTargets": [],
+    "equipment": "Machine"
+  },
+  {
+    "title": "Leg Extension",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": [],
+    "equipment": "Machine"
+  },
+  {
+    "title": "Calf Raises",
+    "category": "Legs",
+    "primaryTargets": ["Calves"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Hip Thrust",
+    "category": "Legs",
+    "primaryTargets": ["Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Lat Pulldown",
+    "category": "Back",
+    "primaryTargets": ["Lats"],
+    "secondaryTargets": ["Biceps"],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Cable Row",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Rhomboids"],
+    "secondaryTargets": ["Biceps"],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Face Pulls",
+    "category": "Back",
+    "primaryTargets": ["Rear Delts", "Rhomboids"],
+    "secondaryTargets": ["Traps"],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Tricep Pushdown",
+    "category": "Arms",
+    "primaryTargets": ["Triceps"],
+    "secondaryTargets": [],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Bicep Curls",
+    "category": "Arms",
+    "primaryTargets": ["Biceps"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Hammer Curls",
+    "category": "Arms",
+    "primaryTargets": ["Biceps", "Forearms"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Preacher Curls",
+    "category": "Arms",
+    "primaryTargets": ["Biceps"],
+    "secondaryTargets": [],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Skull Crushers",
+    "category": "Arms",
+    "primaryTargets": ["Triceps"],
+    "secondaryTargets": [],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Close-Grip Bench Press",
+    "category": "Arms",
+    "primaryTargets": ["Triceps"],
+    "secondaryTargets": ["Chest"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Dips",
+    "category": "Chest",
+    "primaryTargets": ["Chest", "Triceps"],
+    "secondaryTargets": ["Shoulders"],
+    "equipment": "Dip Bars"
+  },
+  {
+    "title": "Push-ups",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": ["Triceps", "Shoulders"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Diamond Push-ups",
+    "category": "Arms",
+    "primaryTargets": ["Triceps"],
+    "secondaryTargets": ["Chest"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Wide-Grip Push-ups",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": ["Shoulders"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Plank",
+    "category": "Core",
+    "primaryTargets": ["Core"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Side Plank",
+    "category": "Core",
+    "primaryTargets": ["Obliques"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Russian Twists",
+    "category": "Core",
+    "primaryTargets": ["Obliques"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Bicycle Crunches",
+    "category": "Core",
+    "primaryTargets": ["Abs", "Obliques"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Leg Raises",
+    "category": "Core",
+    "primaryTargets": ["Lower Abs"],
+    "secondaryTargets": ["Hip Flexors"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Dead Bug",
+    "category": "Core",
+    "primaryTargets": ["Core"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Bird Dog",
+    "category": "Core",
+    "primaryTargets": ["Core", "Lower Back"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Cable Crunch",
+    "category": "Core",
+    "primaryTargets": ["Abs"],
+    "secondaryTargets": [],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Pallof Press",
+    "category": "Core",
+    "primaryTargets": ["Core"],
+    "secondaryTargets": ["Obliques"],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Lateral Raises",
+    "category": "Shoulders",
+    "primaryTargets": ["Side Delts"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Front Raises",
+    "category": "Shoulders",
+    "primaryTargets": ["Front Delts"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Rear Delt Fly",
+    "category": "Shoulders",
+    "primaryTargets": ["Rear Delts"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Arnold Press",
+    "category": "Shoulders",
+    "primaryTargets": ["Shoulders"],
+    "secondaryTargets": ["Triceps"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Upright Row",
+    "category": "Shoulders",
+    "primaryTargets": ["Shoulders", "Traps"],
+    "secondaryTargets": ["Biceps"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Shrugs",
+    "category": "Back",
+    "primaryTargets": ["Traps"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "T-Bar Row",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Rhomboids"],
+    "secondaryTargets": ["Biceps"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Chest Fly",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": [],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Cable Fly",
+    "category": "Chest",
+    "primaryTargets": ["Chest"],
+    "secondaryTargets": [],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Decline Bench Press",
+    "category": "Chest",
+    "primaryTargets": ["Lower Chest"],
+    "secondaryTargets": ["Triceps"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Sumo Deadlift",
+    "category": "Legs",
+    "primaryTargets": ["Glutes", "Hamstrings"],
+    "secondaryTargets": ["Back", "Core"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Trap Bar Deadlift",
+    "category": "Legs",
+    "primaryTargets": ["Glutes", "Hamstrings"],
+    "secondaryTargets": ["Back", "Quads"],
+    "equipment": "Trap Bar"
+  },
+  {
+    "title": "Box Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Step-ups",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Walking Lunges",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Reverse Lunges",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Nordic Curls",
+    "category": "Legs",
+    "primaryTargets": ["Hamstrings"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Good Mornings",
+    "category": "Legs",
+    "primaryTargets": ["Hamstrings", "Lower Back"],
+    "secondaryTargets": ["Glutes"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Glute Bridge",
+    "category": "Legs",
+    "primaryTargets": ["Glutes"],
+    "secondaryTargets": ["Hamstrings"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Single Leg Glute Bridge",
+    "category": "Legs",
+    "primaryTargets": ["Glutes"],
+    "secondaryTargets": ["Hamstrings", "Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Cable Pull-Through",
+    "category": "Legs",
+    "primaryTargets": ["Glutes", "Hamstrings"],
+    "secondaryTargets": [],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Hack Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": ["Glutes"],
+    "equipment": "Machine"
+  },
+  {
+    "title": "Sissy Squat",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Wall Sit",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": ["Glutes"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Jump Squats",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Calves"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Box Jumps",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": ["Calves"],
+    "equipment": "Box"
+  },
+  {
+    "title": "Burpees",
+    "category": "Full Body",
+    "primaryTargets": ["Full Body"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Mountain Climbers",
+    "category": "Core",
+    "primaryTargets": ["Core"],
+    "secondaryTargets": ["Shoulders", "Hip Flexors"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Kettlebell Swing",
+    "category": "Full Body",
+    "primaryTargets": ["Glutes", "Hamstrings"],
+    "secondaryTargets": ["Core", "Shoulders"],
+    "equipment": "Kettlebell"
+  },
+  {
+    "title": "Turkish Get-Up",
+    "category": "Full Body",
+    "primaryTargets": ["Core", "Shoulders"],
+    "secondaryTargets": ["Full Body"],
+    "equipment": "Kettlebell"
+  },
+  {
+    "title": "Clean and Press",
+    "category": "Full Body",
+    "primaryTargets": ["Shoulders", "Legs"],
+    "secondaryTargets": ["Core", "Back"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Thrusters",
+    "category": "Full Body",
+    "primaryTargets": ["Legs", "Shoulders"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Barbell"
+  },
+  {
+    "title": "Man Makers",
+    "category": "Full Body",
+    "primaryTargets": ["Full Body"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Farmers Walk",
+    "category": "Full Body",
+    "primaryTargets": ["Grip", "Core"],
+    "secondaryTargets": ["Traps", "Shoulders"],
+    "equipment": "Dumbbells"
+  },
+  {
+    "title": "Sled Push",
+    "category": "Full Body",
+    "primaryTargets": ["Legs", "Core"],
+    "secondaryTargets": ["Shoulders"],
+    "equipment": "Sled"
+  },
+  {
+    "title": "Sled Pull",
+    "category": "Full Body",
+    "primaryTargets": ["Back", "Legs"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Sled"
+  },
+  {
+    "title": "Battle Ropes",
+    "category": "Full Body",
+    "primaryTargets": ["Arms", "Core"],
+    "secondaryTargets": ["Shoulders"],
+    "equipment": "Battle Ropes"
+  },
+  {
+    "title": "Medicine Ball Slams",
+    "category": "Full Body",
+    "primaryTargets": ["Core", "Shoulders"],
+    "secondaryTargets": ["Lats"],
+    "equipment": "Medicine Ball"
+  },
+  {
+    "title": "Wall Balls",
+    "category": "Full Body",
+    "primaryTargets": ["Legs", "Shoulders"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Medicine Ball"
+  },
+  {
+    "title": "Rowing Machine",
+    "category": "Cardio",
+    "primaryTargets": ["Back", "Legs"],
+    "secondaryTargets": ["Core", "Arms"],
+    "equipment": "Rowing Machine"
+  },
+  {
+    "title": "Assault Bike",
+    "category": "Cardio",
+    "primaryTargets": ["Full Body"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Assault Bike"
+  },
+  {
+    "title": "Treadmill Running",
+    "category": "Cardio",
+    "primaryTargets": ["Legs"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Treadmill"
+  },
+  {
+    "title": "Stair Climber",
+    "category": "Cardio",
+    "primaryTargets": ["Legs", "Glutes"],
+    "secondaryTargets": ["Core"],
+    "equipment": "Stair Machine"
+  },
+  {
+    "title": "Elliptical",
+    "category": "Cardio",
+    "primaryTargets": ["Legs"],
+    "secondaryTargets": ["Arms"],
+    "equipment": "Elliptical"
+  },
+  {
+    "title": "Jump Rope",
+    "category": "Cardio",
+    "primaryTargets": ["Calves"],
+    "secondaryTargets": ["Shoulders", "Core"],
+    "equipment": "Jump Rope"
+  },
+  {
+    "title": "High Knees",
+    "category": "Cardio",
+    "primaryTargets": ["Hip Flexors"],
+    "secondaryTargets": ["Core", "Calves"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Butt Kicks",
+    "category": "Cardio",
+    "primaryTargets": ["Hamstrings"],
+    "secondaryTargets": ["Calves"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Jumping Jacks",
+    "category": "Cardio",
+    "primaryTargets": ["Full Body"],
+    "secondaryTargets": [],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Band Pull-Aparts",
+    "category": "Back",
+    "primaryTargets": ["Rear Delts", "Rhomboids"],
+    "secondaryTargets": [],
+    "equipment": "Resistance Band"
+  },
+  {
+    "title": "Banded Squats",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps", "Glutes"],
+    "secondaryTargets": [],
+    "equipment": "Resistance Band"
+  },
+  {
+    "title": "Banded Hip Abduction",
+    "category": "Legs",
+    "primaryTargets": ["Glute Medius"],
+    "secondaryTargets": [],
+    "equipment": "Resistance Band"
+  },
+  {
+    "title": "Clamshells",
+    "category": "Legs",
+    "primaryTargets": ["Glute Medius"],
+    "secondaryTargets": [],
+    "equipment": "Resistance Band"
+  },
+  {
+    "title": "Banded Good Mornings",
+    "category": "Legs",
+    "primaryTargets": ["Hamstrings", "Lower Back"],
+    "secondaryTargets": [],
+    "equipment": "Resistance Band"
+  },
+  {
+    "title": "Cable Kickbacks",
+    "category": "Legs",
+    "primaryTargets": ["Glutes"],
+    "secondaryTargets": [],
+    "equipment": "Cable"
+  },
+  {
+    "title": "Pistol Squats",
+    "category": "Legs",
+    "primaryTargets": ["Quadriceps"],
+    "secondaryTargets": ["Glutes", "Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "Muscle-ups",
+    "category": "Back",
+    "primaryTargets": ["Lats", "Chest"],
+    "secondaryTargets": ["Triceps", "Core"],
+    "equipment": "Pull-up Bar"
+  },
+  {
+    "title": "Handstand Push-ups",
+    "category": "Shoulders",
+    "primaryTargets": ["Shoulders"],
+    "secondaryTargets": ["Triceps", "Core"],
+    "equipment": "Bodyweight"
+  },
+  {
+    "title": "L-Sit",
+    "category": "Core",
+    "primaryTargets": ["Core", "Hip Flexors"],
+    "secondaryTargets": ["Triceps"],
+    "equipment": "Parallel Bars"
+  }
+]

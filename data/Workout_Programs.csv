@@ -1,0 +1,9 @@
+program_id,program_name,program_type,description
+PR001,AMRAP #2,AMRAP,"Wall ball, KB swing/reverse lunge, Russian twist rotation"
+PR002,Tabata,HIIT,"4 exercises, 20 seconds on, 10 seconds off"
+PR003,CHIPPER,Circuit,"100 push-ups, 200 KB swings, 100 goblet squats, 60 ball slams, 60 plank shoulder taps"
+PR004,Dice Game,Random,"20-minute randomized workout based on dice roll"
+PR005,Warm-up Day 40,Warm-up,"Standard warm-up routine with dynamic stretches"
+PR006,ATW,Wall Series,"Wall-based exercise series"
+PR007,Partner Workout,Partner,"Exercises designed for two people"
+PR008,Block Training,Progressive,"4-week progressive overload blocks"

@@ -1,0 +1,10 @@
+metric_id,client_id,session_id,metric_type,metric_value,unit,notes
+M001,CL001,S001,Plank_Hold,84,seconds,"Good form maintained"
+M002,CL001,S006,Row_Distance,325,meters,"Average pace"
+M003,CL001,S006,Row_Time,130,seconds,"2:10 for 700m"
+M004,CL001,S006,Row_Time,189,seconds,"3:09 for 925m"
+M005,CL001,S004,Max_Deadlift,115,lb,"Grip failed before legs"
+M006,CL001,S009,Balance_Assessment,60,percent,"Better on right side"
+M007,CL001,S011,Plank_Hold,92,seconds,"1:32"
+M008,CL001,S011,Plank_Hold,98,seconds,"1:38 heavy"
+M009,CL001,S011,Ski_Distance,250,meters,"1:30 time"

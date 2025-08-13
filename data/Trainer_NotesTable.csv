@@ -1,0 +1,10 @@
+note_id,client_id,session_id,note_type,note_text,created_date
+N001,CL001,S001,Form,"Left side balance issues during single leg work",2024-11-25
+N002,CL001,S003,Modification,"Switched from KB swings to reverse lunges due to hip issues",2024-12-09
+N003,CL001,S004,Performance,"Grip strength limiting factor on deadlifts",2024-12-18
+N004,CL001,S008,Medical,"Lower back sore from carrying kid - modified workout",2025-01-07
+N005,CL001,S009,Program,"Need to add bounce exercises for adductors",2025-01-21
+N006,CL001,S014,Equipment,"Needs gloves for better grip on bar",2025-03-03
+N007,CL001,S017,Medical,"Right knee pain - continuing with modifications",2025-04-18
+N008,CL001,S021,Technique,"In her head about form - breaking down movements",2025-06-02
+N009,CL001,S021,Progress,"Strength weak but tried to go fast - regrouped with sets of 3",2025-06-02
