@@ -46,7 +46,7 @@ struct WorkoutDetailView: View {
                             
                             if workout.isFavorite {
                                 Image(systemName: "star.fill")
-                                    .foregroundColor(.yellow)
+                                    .foregroundColor(.brandLightCoral)
                             }
                         }
                         
@@ -59,8 +59,8 @@ struct WorkoutDetailView: View {
                                             .font(.caption)
                                             .padding(.horizontal, 10)
                                             .padding(.vertical, 5)
-                                            .background(Color.blue.opacity(0.1))
-                                            .foregroundColor(.blue)
+                                            .background(Color.brandSageGreen.opacity(0.1))
+                                            .foregroundColor(.brandSageGreen)
                                             .cornerRadius(12)
                                     }
                                 }
@@ -204,8 +204,8 @@ struct WorkoutExerciseDetailCard: View {
                         .fontWeight(.bold)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
-                        .background(Color.purple.opacity(0.2))
-                        .foregroundColor(.purple)
+                        .background(Color.brandDarkGreen.opacity(0.2))
+                        .foregroundColor(.brandDarkGreen)
                         .cornerRadius(4)
                 }
             }
@@ -260,7 +260,7 @@ struct WorkoutStatBox: View {
         VStack(spacing: 8) {
             Image(systemName: icon)
                 .font(.title2)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
             
             Text(value)
                 .font(.title3)

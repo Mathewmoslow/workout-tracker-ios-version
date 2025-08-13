@@ -50,7 +50,7 @@ struct NewSessionView: View {
                                 .foregroundColor(.secondary)
                         } else {
                             Text("Select Workout")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.brandSecondaryText)
                         }
                         Image(systemName: "chevron.right")
                             .font(.caption)
@@ -102,10 +102,10 @@ struct NewSessionView: View {
                         .padding(.vertical, 8)
                     }
                     .disabled(selectedClient == nil || selectedWorkout == nil)
-                    .foregroundColor(selectedClient == nil || selectedWorkout == nil ? .gray : .white)
+                    .foregroundColor(selectedClient == nil || selectedWorkout == nil ? .brandSecondaryText : .white)
                     .listRowBackground(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(selectedClient == nil || selectedWorkout == nil ? Color.gray.opacity(0.3) : Color.blue)
+                            .fill(selectedClient == nil || selectedWorkout == nil ? Color.brandSecondaryText.opacity(0.3) : Color.brandSageGreen)
                     )
                 }
             }
@@ -356,7 +356,7 @@ struct WorkoutRow: View {
             VStack(alignment: .leading, spacing: 6) {
                 Text(workout.name)
                     .font(.headline)
-                    .foregroundColor(isSelected ? .blue : .primary)
+                    .foregroundColor(isSelected ? .brandSageGreen : .primary)
                 
                 if !workout.desc.isEmpty {
                     Text(workout.desc)
@@ -384,7 +384,7 @@ struct WorkoutRow: View {
             
             if isSelected {
                 Image(systemName: "checkmark.circle.fill")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.brandSageGreen)
             }
         }
         .padding(.vertical, 4)

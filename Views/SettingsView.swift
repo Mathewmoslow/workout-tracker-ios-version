@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @StateObject private var themeManager = ThemeManager.shared
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -36,6 +39,23 @@ struct SettingsView: View {
                         }
                     } header: {
                         Text("Application")
+                            .font(BrandTypography.caption1)
+                            .foregroundColor(.brandSageGreen)
+                    }
+                    .listRowBackground(Color.brandCard)
+                    
+                    Section {
+                        Toggle(isOn: $themeManager.isDarkMode) {
+                            HStack {
+                                Image(systemName: themeManager.isDarkMode ? "moon.fill" : "sun.max.fill")
+                                    .foregroundColor(.brandSageGreen)
+                                Text("Dark Mode")
+                                    .foregroundColor(.brandText)
+                            }
+                        }
+                        .tint(.brandSageGreen)
+                    } header: {
+                        Text("Appearance")
                             .font(BrandTypography.caption1)
                             .foregroundColor(.brandSageGreen)
                     }

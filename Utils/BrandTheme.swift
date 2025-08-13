@@ -1,5 +1,14 @@
 import SwiftUI
 
+// MARK: - Theme Manager
+class ThemeManager: ObservableObject {
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
+    static let shared = ThemeManager()
+    
+    private init() {}
+}
+
 // MARK: - Brand Colors
 extension Color {
     // Primary Colors from Logo
@@ -12,7 +21,33 @@ extension Color {
     static let brandLightCoral = Color(red: 251/255, green: 183/255, blue: 167/255) // Lighter coral
     static let brandCream = Color(red: 250/255, green: 248/255, blue: 245/255)      // Off-white background
     
-    // Semantic Colors
+    // Dark Mode Colors
+    static let brandDarkBackground = Color(red: 28/255, green: 28/255, blue: 30/255)
+    static let brandDarkCard = Color(red: 44/255, green: 44/255, blue: 46/255)
+    static let brandDarkDivider = Color(red: 58/255, green: 58/255, blue: 60/255)
+    
+    // Adaptive Semantic Colors
+    static func brandBackground(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark ? brandDarkBackground : brandCream
+    }
+    
+    static func brandCard(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark ? brandDarkCard : Color.white
+    }
+    
+    static func brandText(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark ? Color.white : Color(red: 45/255, green: 45/255, blue: 45/255)
+    }
+    
+    static func brandSecondaryText(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark ? Color(red: 174/255, green: 174/255, blue: 178/255) : Color(red: 110/255, green: 110/255, blue: 110/255)
+    }
+    
+    static func brandDivider(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark ? brandDarkDivider : Color(red: 230/255, green: 230/255, blue: 230/255)
+    }
+    
+    // Legacy static colors (for backwards compatibility)
     static let brandBackground = brandCream
     static let brandCard = Color.white
     static let brandText = Color(red: 45/255, green: 45/255, blue: 45/255)

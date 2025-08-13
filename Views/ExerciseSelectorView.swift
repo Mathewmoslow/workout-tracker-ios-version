@@ -156,7 +156,7 @@ struct ExerciseListRow: View {
                             .fontWeight(.bold)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
-                            .background(Color.green)
+                            .background(Color.brandSageGreen)
                             .foregroundColor(.white)
                             .cornerRadius(4)
                     }
@@ -169,14 +169,14 @@ struct ExerciseListRow: View {
                         .font(.caption)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 2)
-                        .background(Color.blue.opacity(0.1))
+                        .background(Color.brandSageGreen.opacity(0.1))
                         .cornerRadius(4)
                     
                     Text(exercise.equipment)
                         .font(.caption)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 2)
-                        .background(Color.green.opacity(0.1))
+                        .background(Color.brandSageGreen.opacity(0.1))
                         .cornerRadius(4)
                     
                     if !exercise.level.isEmpty {
@@ -184,7 +184,7 @@ struct ExerciseListRow: View {
                             .font(.caption)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)
-                            .background(Color(.systemOrange).opacity(0.1))
+                            .background(Color.brandCoral.opacity(0.1))
                             .cornerRadius(4)
                     }
                 }
@@ -203,7 +203,7 @@ struct ExerciseListRow: View {
             
             Image(systemName: "plus.circle.fill")
                 .font(.title2)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
         }
         .padding(.vertical, 4)
     }
@@ -220,7 +220,7 @@ struct RatingBar: View {
                     .frame(height: 4)
                 
                 Rectangle()
-                    .fill(Color.green)
+                    .fill(Color.brandSageGreen)
                     .frame(width: geometry.size.width * (rating / 10), height: 4)
             }
         }

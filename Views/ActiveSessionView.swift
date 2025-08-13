@@ -91,7 +91,7 @@ struct ActiveSessionView: View {
                     Button("End") {
                         showingSessionSummary = true
                     }
-                    .foregroundColor(.red)
+                    .foregroundColor(.brandError)
                 }
             }
             .sheet(isPresented: $showingExerciseList) {
@@ -280,7 +280,7 @@ struct SessionProgressBar: View {
                 Rectangle()
                     .fill(
                         LinearGradient(
-                            colors: [.blue, .purple],
+                            colors: [.brandSageGreen, .brandDarkGreen],
                             startPoint: .leading,
                             endPoint: .trailing
                         )
@@ -399,8 +399,8 @@ struct ActiveExerciseView: View {
                         .fontWeight(.bold)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
-                        .background(Color.purple.opacity(0.2))
-                        .foregroundColor(.purple)
+                        .background(Color.brandDarkGreen.opacity(0.2))
+                        .foregroundColor(.brandDarkGreen)
                         .cornerRadius(4)
                 }
             }
@@ -415,9 +415,9 @@ struct ActiveExerciseView: View {
                 HStack(spacing: 8) {
                     ForEach(0..<totalSets, id: \.self) { index in
                         Circle()
-                            .fill(index < setIndex ? Color.green : 
-                                  index == setIndex ? Color.blue : 
-                                  Color.gray.opacity(0.3))
+                            .fill(index < setIndex ? Color.brandSageGreen : 
+                                  index == setIndex ? Color.brandSageGreen : 
+                                  Color.brandDivider.opacity(0.3))
                             .frame(width: 10, height: 10)
                     }
                 }
@@ -435,7 +435,7 @@ struct ActiveExerciseView: View {
                         Button(action: { if currentReps > 1 { currentReps -= 1 } }) {
                             Image(systemName: "minus.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(.brandSageGreen)
                         }
                         
                         Text("\(currentReps)")
@@ -445,7 +445,7 @@ struct ActiveExerciseView: View {
                         Button(action: { currentReps += 1 }) {
                             Image(systemName: "plus.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(.brandSageGreen)
                         }
                     }
                     
@@ -464,7 +464,7 @@ struct ActiveExerciseView: View {
                         Button(action: { if currentWeight > 0 { currentWeight -= 2.5 } }) {
                             Image(systemName: "minus.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(.brandSageGreen)
                         }
                         
                         Text(String(format: "%.1f", currentWeight))
@@ -474,7 +474,7 @@ struct ActiveExerciseView: View {
                         Button(action: { currentWeight += 2.5 }) {
                             Image(systemName: "plus.circle.fill")
                                 .font(.title)
-                                .foregroundColor(.blue)
+                                .foregroundColor(.brandSageGreen)
                         }
                     }
                     
@@ -512,7 +512,7 @@ struct ActiveExerciseView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.brandSageGreen)
                     .cornerRadius(12)
             }
             .padding(.horizontal)
@@ -543,7 +543,7 @@ struct RestTimerView: View {
                     .trim(from: 0, to: Double(restTimeRemaining) / 90.0)
                     .stroke(
                         LinearGradient(
-                            colors: [.blue, .purple],
+                            colors: [.brandSageGreen, .brandDarkGreen],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ),
@@ -564,9 +564,9 @@ struct RestTimerView: View {
             Button(action: onSkip) {
                 Text("Skip Rest")
                     .font(.headline)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.brandSageGreen)
                     .padding()
-                    .background(Color.blue.opacity(0.1))
+                    .background(Color.brandSageGreen.opacity(0.1))
                     .cornerRadius(12)
             }
             
@@ -615,7 +615,7 @@ struct SessionNavigationControls: View {
                 .foregroundColor(.white)
                 .padding(.horizontal, 30)
                 .frame(height: 60)
-                .background(Color.blue)
+                .background(Color.brandSageGreen)
                 .cornerRadius(30)
             }
             .disabled(!canGoNext)
@@ -639,8 +639,8 @@ struct ExerciseListView: View {
                     // Status Icon
                     Image(systemName: exercise.wasCompleted ? "checkmark.circle.fill" : 
                           index == currentIndex ? "play.circle.fill" : "circle")
-                        .foregroundColor(exercise.wasCompleted ? .green : 
-                                       index == currentIndex ? .blue : .gray)
+                        .foregroundColor(exercise.wasCompleted ? .brandSageGreen : 
+                                       index == currentIndex ? .brandSageGreen : .brandSecondaryText)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(exercise.exercise.title)
@@ -659,8 +659,8 @@ struct ExerciseListView: View {
                             .fontWeight(.bold)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
-                            .background(Color.purple.opacity(0.2))
-                            .foregroundColor(.purple)
+                            .background(Color.brandDarkGreen.opacity(0.2))
+                            .foregroundColor(.brandDarkGreen)
                             .cornerRadius(4)
                     }
                 }
@@ -724,7 +724,7 @@ struct RPEPickerView: View {
                             
                             if selectedRPE == value {
                                 Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.brandSageGreen)
                             }
                         }
                         .padding()
@@ -874,7 +874,7 @@ struct SummaryStatBox: View {
         VStack(spacing: 8) {
             Image(systemName: icon)
                 .font(.title2)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
             
             Text(value)
                 .font(.title3)

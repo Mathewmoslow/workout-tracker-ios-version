@@ -47,11 +47,11 @@ struct LaunchScreen: View {
                     
                     // Tagline
                     VStack(spacing: BrandSpacing.xSmall) {
-                        Text("Professional Fitness Tracking")
+                        Text("Comprehensive Client Tracking")
                             .font(BrandTypography.headline)
                             .foregroundColor(.white.opacity(0.9))
                         
-                        Text("For Trainers and Their Clients")
+                        Text("An ickle app for Aaron and his Clients")
                             .font(BrandTypography.subheadline)
                             .foregroundColor(.white.opacity(0.7))
                     }

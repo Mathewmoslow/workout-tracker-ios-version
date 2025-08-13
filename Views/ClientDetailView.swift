@@ -76,14 +76,14 @@ struct ClientHeaderCard: View {
                 // Profile Image Placeholder
                 Circle()
                     .fill(LinearGradient(
-                        colors: [.blue, .purple],
+                        colors: [.brandSageGreen, .brandDarkGreen],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     ))
                     .frame(width: 80, height: 80)
                     .overlay(
                         Text(client.firstName.prefix(1) + client.lastName.prefix(1))
-                            .font(.title)
+                            .font(BrandTypography.title1)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     )
@@ -97,8 +97,8 @@ struct ClientHeaderCard: View {
                         Label("\(client.age) years", systemImage: "person")
                         Label(client.primaryGoal.rawValue, systemImage: "target")
                     }
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                    .font(BrandTypography.caption1)
+                    .foregroundColor(.brandSecondaryText)
                     
                     HStack {
                         StatusBadge(
@@ -151,7 +151,7 @@ struct FitScoreDashboard: View {
                         .font(.system(size: 48, weight: .bold, design: .rounded))
                     
                     Text(fitScore.scoreCategory.rawValue)
-                        .font(.caption)
+                        .font(BrandTypography.caption1)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(fitScore.scoreCategory.color))
                     
@@ -190,17 +190,22 @@ struct FitScoreDashboard: View {
     }
     
     func gradientColors(for score: Double) -> [Color] {
+        // Always use sage green gradient for consistency, just vary the intensity
         switch score {
         case 900...1000:
-            return [.purple, .pink]
+            return [.brandSageGreen, .brandDarkGreen]
         case 800..<900:
-            return [.green, .blue]
+            return [.brandSageGreen, .brandDarkGreen]
         case 700..<800:
-            return [.blue, .cyan]
+            return [.brandSageGreen, .brandLightGreen]
         case 600..<700:
-            return [.yellow, Color(.systemOrange)]
+            return [.brandLightGreen, .brandSageGreen]
+        case 500..<600:
+            return [.brandLightGreen, .brandSageGreen.opacity(0.8)]
+        case 400..<500:
+            return [.brandLightGreen.opacity(0.8), .brandSageGreen.opacity(0.6)]
         default:
-            return [Color(.systemOrange), .red]
+            return [.brandLightGreen.opacity(0.6), .brandSageGreen.opacity(0.4)]
         }
     }
 }
@@ -214,24 +219,24 @@ struct ScoreComponent: View {
         HStack {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
                 .frame(width: 30)
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                    .font(BrandTypography.caption1)
+                    .foregroundColor(.brandSecondaryText)
                 
                 HStack(spacing: 4) {
                     Text("\(Int(score))")
-                        .font(.headline)
+                        .font(BrandTypography.headline)
                         .fontWeight(.semibold)
                     
                     // Mini progress bar
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             Rectangle()
-                                .fill(Color.gray.opacity(0.2))
+                                .fill(Color.brandDivider)
                                 .frame(height: 4)
                             
                             Rectangle()
@@ -246,20 +251,20 @@ struct ScoreComponent: View {
             Spacer()
         }
         .padding(12)
-        .background(Color(.tertiarySystemBackground))
+        .background(Color.brandBackground)
         .cornerRadius(8)
     }
     
     func scoreColor(_ score: Double) -> Color {
         switch score {
         case 80...100:
-            return .green
+            return .brandSageGreen
         case 60..<80:
-            return .blue
+            return .brandLightGreen
         case 40..<60:
-            return .yellow
+            return .brandCoral
         default:
-            return Color(.systemIndigo)
+            return .brandCoral.opacity(0.6)
         }
     }
 }
@@ -272,7 +277,7 @@ struct MuscleBalanceView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Muscle Balance")
-                .font(.headline)
+                .font(BrandTypography.headline)
                 .padding(.horizontal)
             
             HStack(spacing: 20) {
@@ -319,7 +324,7 @@ struct MuscleGroupIndicator: View {
                     .trim(from: 0, to: value / 100)
                     .stroke(
                         LinearGradient(
-                            colors: [.blue, .purple],
+                            colors: [.brandSageGreen, .brandDarkGreen],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ),
@@ -330,12 +335,12 @@ struct MuscleGroupIndicator: View {
                 
                 Image(systemName: icon)
                     .font(.title3)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.brandSageGreen)
             }
             
             Text(label)
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .font(BrandTypography.caption1)
+                .foregroundColor(.brandSecondaryText)
             
             Text("\(Int(value))%")
                 .font(.caption2)
@@ -366,7 +371,7 @@ struct TrendIndicator: View {
     
     var body: some View {
         Text(trend.rawValue)
-            .font(.caption)
+            .font(BrandTypography.caption1)
             .fontWeight(.bold)
             .foregroundColor(trendColor)
     }
@@ -415,7 +420,7 @@ struct OverviewTab: View {
             if !client.sessions.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Recent Sessions")
-                        .font(.headline)
+                        .font(BrandTypography.headline)
                         .padding(.horizontal)
                     
                     ForEach(client.sessions.prefix(3)) { session in
@@ -437,20 +442,20 @@ struct StatCard: View {
         VStack(spacing: 8) {
             Image(systemName: icon)
                 .font(.title2)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
             
             Text(value)
-                .font(.title3)
+                .font(BrandTypography.title3)
                 .fontWeight(.bold)
+                .foregroundColor(.brandText)
             
             Text(title)
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .font(BrandTypography.caption1)
+                .foregroundColor(.brandSecondaryText)
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color(.secondarySystemBackground))
-        .cornerRadius(12)
+        .brandCard()
     }
 }
 
@@ -461,26 +466,26 @@ struct SessionRowView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(session.workout.name)
-                    .font(.subheadline)
+                    .font(BrandTypography.subheadline)
                     .fontWeight(.medium)
+                    .foregroundColor(.brandText)
                 
                 HStack {
                     Label("\(session.totalSets) sets", systemImage: "number")
                     Label("\(Int(session.totalVolume)) kg", systemImage: "scalemass")
                 }
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .font(BrandTypography.caption1)
+                .foregroundColor(.brandSecondaryText)
             }
             
             Spacer()
             
             Text(session.date, style: .date)
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .font(BrandTypography.caption1)
+                .foregroundColor(.brandSecondaryText)
         }
         .padding()
-        .background(Color(.tertiarySystemBackground))
-        .cornerRadius(8)
+        .brandOutlineCard(padding: 0)
         .padding(.horizontal)
     }
 }
@@ -545,7 +550,7 @@ struct CurrentMeasurementsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Current Measurements")
-                .font(.headline)
+                .font(BrandTypography.headline)
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                 MeasurementItem(title: "Weight", value: "\(Int(client.currentWeight)) kg", trend: client.weightTrend)
@@ -592,11 +597,11 @@ struct MeasurementItem: View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text(title)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                    .font(BrandTypography.caption1)
+                    .foregroundColor(.brandSecondaryText)
                 Spacer()
                 Image(systemName: trendIcon)
-                    .font(.caption)
+                    .font(BrandTypography.caption1)
                     .foregroundColor(trendColor)
             }
             
@@ -605,7 +610,7 @@ struct MeasurementItem: View {
                 .fontWeight(.bold)
         }
         .padding(12)
-        .background(Color(.tertiarySystemBackground))
+        .background(Color.brandBackground)
         .cornerRadius(8)
     }
 }
@@ -616,7 +621,7 @@ struct BodyCompositionCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Body Composition")
-                .font(.headline)
+                .font(BrandTypography.headline)
             
             // Visual representation
             HStack(spacing: 20) {
@@ -672,7 +677,7 @@ struct CompositionBar: View {
             }
             
             Text("\(Int(percentage))%")
-                .font(.caption)
+                .font(BrandTypography.caption1)
                 .fontWeight(.bold)
             
             Text(label)
@@ -690,7 +695,7 @@ struct MeasurementHistoryView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Text("Progress")
-                    .font(.headline)
+                    .font(BrandTypography.headline)
                 
                 Spacer()
                 
@@ -885,7 +890,7 @@ struct AddMeasurementView: View {
                     
                     VStack(alignment: .leading) {
                         Text("Notes")
-                            .font(.caption)
+                            .font(BrandTypography.caption1)
                             .foregroundColor(.secondary)
                         TextEditor(text: $notes)
                             .frame(minHeight: 80)

@@ -46,7 +46,7 @@ struct CreateWorkoutView: View {
                         VStack(spacing: 12) {
                             Image(systemName: "figure.strengthtraining.traditional")
                                 .font(.largeTitle)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.brandSecondaryText)
                             Text("No exercises added")
                                 .foregroundColor(.secondary)
                             Button("Add Exercise") {
@@ -64,7 +64,7 @@ struct CreateWorkoutView: View {
                                     HStack {
                                         Label("Superset", systemImage: "link")
                                             .font(.caption)
-                                            .foregroundColor(.blue)
+                                            .foregroundColor(.brandSageGreen)
                                         Spacer()
                                         Button("Break Apart") {
                                             breakSuperset(groupId)
@@ -73,7 +73,7 @@ struct CreateWorkoutView: View {
                                     }
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
-                                    .background(Color.blue.opacity(0.1))
+                                    .background(Color.brandSageGreen.opacity(0.1))
                                     .cornerRadius(6)
                                 }
                                 
@@ -211,7 +211,7 @@ struct TagButton: View {
                 .font(.caption)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(isSelected ? Color.blue : Color.gray.opacity(0.2))
+                .background(isSelected ? Color.brandSageGreen : Color.brandDivider.opacity(0.2))
                 .foregroundColor(isSelected ? .white : .primary)
                 .cornerRadius(15)
         }
@@ -230,7 +230,7 @@ struct WorkoutExerciseRow: View {
         HStack {
             if showCheckbox {
                 Image(systemName: isSelected ? "checkmark.square.fill" : "square")
-                    .foregroundColor(isSelected ? .blue : .gray)
+                    .foregroundColor(isSelected ? .brandSageGreen : .brandSecondaryText)
                     .onTapGesture {
                         onToggleSelection()
                     }
@@ -258,7 +258,7 @@ struct WorkoutExerciseRow: View {
                                 if let rpe = set.rpe {
                                     Text("RPE \(rpe)")
                                         .font(.caption2)
-                                        .foregroundColor(Color(.systemOrange))
+                                        .foregroundColor(Color.brandCoral)
                                 }
                             }
                         }
@@ -271,7 +271,7 @@ struct WorkoutExerciseRow: View {
                 } else {
                     Text("Tap to configure sets")
                         .font(.caption)
-                        .foregroundColor(Color(.systemOrange))
+                        .foregroundColor(Color.brandCoral)
                 }
             }
             .contentShape(Rectangle())
@@ -284,12 +284,12 @@ struct WorkoutExerciseRow: View {
             HStack(spacing: 12) {
                 Button(action: onEdit) {
                     Image(systemName: "pencil.circle")
-                        .foregroundColor(.blue)
+                        .foregroundColor(.brandSageGreen)
                 }
                 
                 Button(action: onRemove) {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.red.opacity(0.6))
+                        .foregroundColor(.brandError.opacity(0.6))
                 }
             }
         }

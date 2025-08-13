@@ -3,6 +3,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @StateObject private var themeManager = ThemeManager.shared
     
     var body: some View {
         TabView {
@@ -33,6 +34,7 @@ struct ContentView: View {
         }
         .accentColor(.brandSageGreen)
         .brandTabBar()
+        .preferredColorScheme(themeManager.isDarkMode ? .dark : .light)
     }
 }
 

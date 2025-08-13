@@ -261,10 +261,10 @@ struct NewClientView: View {
                         Spacer()
                         if medicalConditions.contains(condition) {
                             Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.brandSageGreen)
                         } else {
                             Image(systemName: "circle")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.brandSecondaryText)
                         }
                     }
                     .contentShape(Rectangle())
@@ -368,7 +368,7 @@ struct NewClientView: View {
                 VStack(spacing: 12) {
                     Image(systemName: "checkmark.circle.fill")
                         .font(.system(size: 50))
-                        .foregroundColor(.green)
+                        .foregroundColor(.brandSageGreen)
                     
                     Text("Ready to Save")
                         .font(.headline)
@@ -395,11 +395,11 @@ struct NewClientView: View {
     func severityColor(_ severity: Injury.InjurySeverity) -> Color {
         switch severity {
         case .mild:
-            return .yellow
+            return .brandLightCoral
         case .moderate:
             return Color(.systemIndigo)
         case .severe:
-            return .red
+            return .brandError
         }
     }
     
@@ -502,25 +502,25 @@ struct TabSelector: View {
                 }) {
                     VStack(spacing: 8) {
                         Circle()
-                            .fill(currentTab >= index ? Color.blue : Color.gray.opacity(0.3))
+                            .fill(currentTab >= index ? Color.brandSageGreen : Color.brandDivider.opacity(0.3))
                             .frame(width: 30, height: 30)
                             .overlay(
                                 Text("\(index + 1)")
                                     .font(.caption)
                                     .fontWeight(.bold)
-                                    .foregroundColor(currentTab >= index ? .white : .gray)
+                                    .foregroundColor(currentTab >= index ? .white : .brandSecondaryText)
                             )
                         
                         Text(tabs[index])
                             .font(.caption2)
-                            .foregroundColor(currentTab == index ? .blue : .gray)
+                            .foregroundColor(currentTab == index ? .brandSageGreen : .brandSecondaryText)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 
                 if index < tabs.count - 1 {
                     Rectangle()
-                        .fill(currentTab > index ? Color.blue : Color.gray.opacity(0.3))
+                        .fill(currentTab > index ? Color.brandSageGreen : Color.brandDivider.opacity(0.3))
                         .frame(height: 2)
                         .frame(maxWidth: .infinity)
                 }

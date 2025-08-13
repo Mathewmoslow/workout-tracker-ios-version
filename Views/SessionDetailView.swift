@@ -138,13 +138,13 @@ struct SessionOverviewCard: View {
     func completionColor(_ rate: Double) -> Color {
         switch rate {
         case 90...100:
-            return .green
+            return .brandSageGreen
         case 70..<90:
-            return .blue
+            return .brandSageGreen
         case 50..<70:
             return Color(.systemIndigo)
         default:
-            return .red
+            return .brandError
         }
     }
     
@@ -168,7 +168,7 @@ struct MetricBox: View {
         HStack {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
                 .frame(width: 30)
             
             VStack(alignment: .leading, spacing: 2) {
@@ -232,7 +232,7 @@ struct VolumeChart: View {
                 x: .value("Exercise", String(exercise.exercise.title.prefix(10))),
                 y: .value("Volume", exercise.totalVolume)
             )
-            .foregroundStyle(Color.blue.gradient)
+            .foregroundStyle(Color.brandSageGreen.gradient)
         }
         .frame(height: 200)
     }
@@ -247,7 +247,7 @@ struct IntensityChart: View {
                 x: .value("Exercise", String(exercise.exercise.title.prefix(10))),
                 y: .value("RPE", exercise.averageRPE)
             )
-            .foregroundStyle(Color(.systemOrange).gradient)
+            .foregroundStyle(Color.brandCoral.gradient)
         }
         .frame(height: 200)
     }
@@ -269,7 +269,7 @@ struct RestTimeChart: View {
                 x: .value("Exercise", item.0),
                 y: .value("Rest (s)", item.1)
             )
-            .foregroundStyle(Color.green.gradient)
+            .foregroundStyle(Color.brandSageGreen.gradient)
         }
         .frame(height: 200)
     }
@@ -306,7 +306,7 @@ struct SessionExerciseRow: View {
                 // Exercise Name and Status
                 HStack(spacing: 8) {
                     Image(systemName: exercise.wasCompleted ? "checkmark.circle.fill" : "circle")
-                        .foregroundColor(exercise.wasCompleted ? .green : .gray)
+                        .foregroundColor(exercise.wasCompleted ? .brandSageGreen : .brandSecondaryText)
                     
                     Text(exercise.exercise.title)
                         .font(.subheadline)
@@ -318,8 +318,8 @@ struct SessionExerciseRow: View {
                             .fontWeight(.bold)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
-                            .background(Color.purple.opacity(0.2))
-                            .foregroundColor(.purple)
+                            .background(Color.brandDarkGreen.opacity(0.2))
+                            .foregroundColor(.brandDarkGreen)
                             .cornerRadius(4)
                     }
                 }
@@ -359,13 +359,13 @@ struct SetBadge: View {
     var performanceColor: Color {
         switch set.performanceRatio {
         case 0.95...:
-            return .green
+            return .brandSageGreen
         case 0.8..<0.95:
-            return .blue
+            return .brandSageGreen
         case 0.6..<0.8:
             return Color(.systemIndigo)
         default:
-            return .red
+            return .brandError
         }
     }
     
@@ -399,23 +399,23 @@ struct SessionQualityView: View {
             
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                 if let rpe = session.sessionRPE {
-                    QualityMetric(title: "Overall RPE", value: rpe, maxValue: 10, color: .red)
+                    QualityMetric(title: "Overall RPE", value: rpe, maxValue: 10, color: .brandError)
                 }
                 
                 if let preEnergy = session.preWorkoutEnergy {
-                    QualityMetric(title: "Pre-Energy", value: preEnergy, maxValue: 10, color: .green)
+                    QualityMetric(title: "Pre-Energy", value: preEnergy, maxValue: 10, color: .brandSageGreen)
                 }
                 
                 if let postEnergy = session.postWorkoutEnergy {
-                    QualityMetric(title: "Post-Energy", value: postEnergy, maxValue: 10, color: .blue)
+                    QualityMetric(title: "Post-Energy", value: postEnergy, maxValue: 10, color: .brandSageGreen)
                 }
                 
                 if let focus = session.focusLevel {
-                    QualityMetric(title: "Focus", value: focus, maxValue: 10, color: .purple)
+                    QualityMetric(title: "Focus", value: focus, maxValue: 10, color: .brandDarkGreen)
                 }
                 
                 if let technique = session.techniqueQuality {
-                    QualityMetric(title: "Technique", value: technique, maxValue: 10, color: Color(.systemOrange))
+                    QualityMetric(title: "Technique", value: technique, maxValue: 10, color: Color.brandCoral)
                 }
             }
         }
@@ -545,7 +545,7 @@ struct EnvironmentalFactor: View {
         VStack(spacing: 4) {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundColor(.blue)
+                .foregroundColor(.brandSageGreen)
             
             Text(value)
                 .font(.caption)
@@ -708,11 +708,11 @@ struct SetDetailRow: View {
     func rpeColor(_ rpe: Int) -> Color {
         switch rpe {
         case 1...4:
-            return .green
+            return .brandSageGreen
         case 5...7:
             return Color(.systemIndigo)
         default:
-            return .red
+            return .brandError
         }
     }
 }
@@ -723,13 +723,13 @@ struct PerformanceIndicator: View {
     var color: Color {
         switch ratio {
         case 0.95...:
-            return .green
+            return .brandSageGreen
         case 0.8..<0.95:
-            return .blue
+            return .brandSageGreen
         case 0.6..<0.8:
             return Color(.systemIndigo)
         default:
-            return .red
+            return .brandError
         }
     }
     
