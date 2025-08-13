@@ -3,6 +3,7 @@ import SwiftData
 
 struct CalendarView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query(sort: \Client.firstName) private var clients: [Client]
     @Query(sort: \Session.date, order: .reverse) private var sessions: [Session]
     
@@ -67,7 +68,7 @@ struct CalendarView: View {
                     .padding(.horizontal)
                 }
                 .padding(.vertical, 8)
-                .background(Color.brandBackground)
+                .background(Color.brandBackground(colorScheme))
                 
                 // Calendar View
                 switch viewMode {
@@ -106,6 +107,7 @@ struct CalendarView: View {
 struct CalendarHeader: View {
     @Binding var selectedDate: Date
     @Binding var viewMode: CalendarView.ViewMode
+    @Environment(\.colorScheme) var colorScheme
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -175,7 +177,7 @@ struct CalendarHeader: View {
             .padding(.horizontal)
         }
         .padding(.vertical)
-        .background(Color.brandBackground)
+        .background(Color.brandBackground(colorScheme))
     }
     
     var weekRangeText: String {
@@ -219,6 +221,7 @@ struct CalendarHeader: View {
 struct DayView: View {
     let date: Date
     let sessions: [Session]
+    @Environment(\.colorScheme) var colorScheme
     
     let hours = Array(6...22) // 6 AM to 10 PM
     
@@ -281,6 +284,7 @@ struct DayView: View {
 
 struct DaySessionCard: View {
     let session: Session
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack {
@@ -332,6 +336,7 @@ struct DaySessionCard: View {
 struct WeekView: View {
     @Binding var selectedDate: Date
     let sessions: [Session]
+    @Environment(\.colorScheme) var colorScheme
     
     var weekDays: [Date] {
         let calendar = Calendar.current
@@ -418,17 +423,18 @@ struct WeekView: View {
 struct WeekDayHeader: View {
     let date: Date
     let isSelected: Bool
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 4) {
             Text(date.formatted(.dateTime.weekday(.abbreviated)))
                 .font(BrandTypography.caption1)
-                .foregroundColor(.brandSecondaryText)
+                .foregroundColor(.brandSecondaryText(colorScheme))
             
             Text(date.formatted(.dateTime.day()))
                 .font(BrandTypography.headline)
                 .fontWeight(isSelected ? .bold : .medium)
-                .foregroundColor(isSelected ? .white : .brandText)
+                .foregroundColor(isSelected ? .white : .brandText(colorScheme))
                 .frame(width: 32, height: 32)
                 .background(
                     Circle()
@@ -441,6 +447,7 @@ struct WeekDayHeader: View {
 
 struct WeekSessionCard: View {
     let session: Session
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -489,6 +496,7 @@ struct MonthView: View {
     @Binding var selectedDate: Date
     let sessions: [Session]
     let selectedClient: Client?
+    @Environment(\.colorScheme) var colorScheme
     
     let calendar = Calendar.current
     
@@ -570,6 +578,7 @@ struct MonthDayCell: View {
     let sessions: [Session]
     let isSelected: Bool
     let isToday: Bool
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 4) {
@@ -604,6 +613,7 @@ struct FilterChip: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Button(action: action) {
@@ -613,7 +623,7 @@ struct FilterChip: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
                 .background(isSelected ? Color.brandSageGreen : Color.brandBackground)
-                .foregroundColor(isSelected ? .white : .brandText)
+                .foregroundColor(isSelected ? .white : .brandText(colorScheme))
                 .cornerRadius(16)
         }
     }

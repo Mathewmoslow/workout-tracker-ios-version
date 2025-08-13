@@ -3,6 +3,7 @@ import SwiftData
 
 struct WorkoutsView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query private var workouts: [Workout]
     @State private var searchText = ""
     @State private var showingCreateWorkout = false
@@ -24,8 +25,8 @@ struct WorkoutsView: View {
             List {
                 ForEach(filteredWorkouts) { workout in
                     WorkoutRowView(workout: workout)
-                        .listRowBackground(Color.brandCard)
-                        .listRowSeparatorTint(.brandDivider)
+                        .listRowBackground(Color.brandCard(colorScheme))
+                        .listRowSeparatorTint(.brandDivider(colorScheme))
                         .onTapGesture {
                             selectedWorkout = workout
                         }
@@ -46,7 +47,7 @@ struct WorkoutsView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .background(Color.brandBackground)
+            .background(Color.brandBackground(colorScheme))
             .navigationTitle("Workouts")
             .navigationBarTitleDisplayMode(.large)
             .brandNavigationBar()
@@ -90,13 +91,14 @@ struct WorkoutsView: View {
 
 struct WorkoutRowView: View {
     let workout: Workout
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Text(workout.name)
                     .font(BrandTypography.headline)
-                    .foregroundColor(.brandText)
+                    .foregroundColor(.brandText(colorScheme))
                 
                 Spacer()
                 
@@ -110,14 +112,14 @@ struct WorkoutRowView: View {
             if !workout.desc.isEmpty {
                 Text(workout.desc)
                     .font(BrandTypography.caption1)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
                     .lineLimit(2)
             }
             
             HStack {
                 Label("\(workout.exerciseCount) exercises", systemImage: "figure.strengthtraining.traditional")
                     .font(BrandTypography.caption1)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
                 
                 if workout.hasSuperset {
                     BrandBadge(text: "Superset", color: .brandCoral)

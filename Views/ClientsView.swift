@@ -3,6 +3,7 @@ import SwiftData
 
 struct ClientsView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query(sort: \Client.firstName) private var clients: [Client]
     @State private var showingNewClient = false
     @State private var searchText = ""
@@ -28,11 +29,11 @@ struct ClientsView: View {
                     Spacer()
                     Text("\(clients.count) clients")
                         .font(BrandTypography.caption1)
-                        .foregroundColor(.brandSecondaryText)
+                        .foregroundColor(.brandSecondaryText(colorScheme))
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 8)
-                .background(Color.brandCard)
+                .background(Color.brandCard(colorScheme))
                 .onAppear {
                     print("ClientsView appeared - Found \(clients.count) clients")
                     for client in clients {
@@ -46,8 +47,8 @@ struct ClientsView: View {
                     List {
                         ForEach(filteredClients) { client in
                             ClientRowView(client: client)
-                                .listRowBackground(Color.brandCard)
-                                .listRowSeparatorTint(.brandDivider)
+                                .listRowBackground(Color.brandCard(colorScheme))
+                                .listRowSeparatorTint(.brandDivider(colorScheme))
                                 .onTapGesture {
                                     selectedClient = client
                                 }
@@ -55,7 +56,7 @@ struct ClientsView: View {
                         .onDelete(perform: deleteClients)
                     }
                     .listStyle(PlainListStyle())
-                    .background(Color.brandBackground)
+                    .background(Color.brandBackground(colorScheme))
                     .searchable(text: $searchText, prompt: "Search clients")
                 }
             }
@@ -100,6 +101,7 @@ struct ClientsView: View {
 
 struct ClientRowView: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack {
@@ -120,7 +122,7 @@ struct ClientRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(client.fullName)
                     .font(BrandTypography.headline)
-                    .foregroundColor(.brandText)
+                    .foregroundColor(.brandText(colorScheme))
                 
                 HStack {
                     Label("\(client.sessions.count) sessions", systemImage: "calendar")
@@ -130,7 +132,7 @@ struct ClientRowView: View {
                     }
                 }
                 .font(BrandTypography.caption1)
-                .foregroundColor(.brandSecondaryText)
+                .foregroundColor(.brandSecondaryText(colorScheme))
             }
             
             Spacer()
@@ -142,7 +144,7 @@ struct ClientRowView: View {
                 
                 Text(client.subscriptionType.rawValue)
                     .font(BrandTypography.caption2)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
             }
         }
         .padding(.vertical, 4)
@@ -151,6 +153,7 @@ struct ClientRowView: View {
 
 struct EmptyClientsView: View {
     let onAddClient: () -> Void
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: BrandSpacing.large) {
@@ -163,7 +166,7 @@ struct EmptyClientsView: View {
             
             Text("Add your first client to start tracking their fitness journey")
                 .font(BrandTypography.subheadline)
-                .foregroundColor(.brandSecondaryText)
+                .foregroundColor(.brandSecondaryText(colorScheme))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             

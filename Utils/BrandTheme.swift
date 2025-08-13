@@ -155,69 +155,77 @@ struct BrandCompactButtonStyle: ButtonStyle {
 // MARK: - Card Styles
 struct BrandCardModifier: ViewModifier {
     var padding: CGFloat = 16
+    @Environment(\.colorScheme) var colorScheme
     
     func body(content: Content) -> some View {
         content
             .padding(padding)
-            .background(Color.brandCard)
+            .background(Color.brandCard(colorScheme))
             .cornerRadius(16)
-            .shadow(color: Color.black.opacity(0.05), radius: 8, x: 0, y: 2)
+            .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.3 : 0.05), radius: 8, x: 0, y: 2)
     }
 }
 
 struct BrandOutlineCardModifier: ViewModifier {
     var padding: CGFloat = 16
+    @Environment(\.colorScheme) var colorScheme
     
     func body(content: Content) -> some View {
         content
             .padding(padding)
-            .background(Color.brandCard)
+            .background(Color.brandCard(colorScheme))
             .cornerRadius(16)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.brandDivider, lineWidth: 1)
+                    .stroke(Color.brandDivider(colorScheme), lineWidth: 1)
             )
     }
 }
 
 // MARK: - TextField Styles
 struct BrandTextFieldModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     func body(content: Content) -> some View {
         content
             .font(BrandTypography.body)
             .padding(12)
-            .background(Color.brandBackground)
+            .background(Color.brandBackground(colorScheme))
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.brandDivider, lineWidth: 1)
+                    .stroke(Color.brandDivider(colorScheme), lineWidth: 1)
             )
     }
 }
 
 // MARK: - Navigation Bar Styling
 struct BrandNavigationBarModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     func body(content: Content) -> some View {
         content
-            .toolbarBackground(Color.brandCard, for: .navigationBar)
+            .toolbarBackground(Color.brandCard(colorScheme), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarColorScheme(.light, for: .navigationBar)
+            .toolbarColorScheme(colorScheme, for: .navigationBar)
     }
 }
 
 // MARK: - Tab Bar Styling
 struct BrandTabBarModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     func body(content: Content) -> some View {
         content
             .onAppear {
                 let appearance = UITabBarAppearance()
                 appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = UIColor(Color.brandCard)
+                appearance.backgroundColor = UIColor(Color.brandCard(colorScheme))
                 
                 // Normal state
-                appearance.stackedLayoutAppearance.normal.iconColor = UIColor(Color.brandSecondaryText)
+                appearance.stackedLayoutAppearance.normal.iconColor = UIColor(Color.brandSecondaryText(colorScheme))
                 appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-                    .foregroundColor: UIColor(Color.brandSecondaryText)
+                    .foregroundColor: UIColor(Color.brandSecondaryText(colorScheme))
                 ]
                 
                 // Selected state

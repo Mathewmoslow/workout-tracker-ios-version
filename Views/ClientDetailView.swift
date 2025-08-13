@@ -5,6 +5,7 @@ import Charts
 struct ClientDetailView: View {
     let client: Client
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @State private var selectedTab = 0
     @State private var showingAddSession = false
     @State private var showingAddMeasurement = false
@@ -69,6 +70,7 @@ struct ClientDetailView: View {
 
 struct ClientHeaderCard: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 12) {
@@ -98,7 +100,7 @@ struct ClientHeaderCard: View {
                         Label(client.primaryGoal.rawValue, systemImage: "target")
                     }
                     .font(BrandTypography.caption1)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
                     
                     HStack {
                         StatusBadge(
@@ -125,6 +127,7 @@ struct ClientHeaderCard: View {
 
 struct FitScoreDashboard: View {
     let fitScore: FitScore
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 16) {
@@ -214,6 +217,7 @@ struct ScoreComponent: View {
     let title: String
     let score: Double
     let icon: String
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack {
@@ -225,7 +229,7 @@ struct ScoreComponent: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
                     .font(BrandTypography.caption1)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
                 
                 HStack(spacing: 4) {
                     Text("\(Int(score))")
@@ -236,7 +240,7 @@ struct ScoreComponent: View {
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             Rectangle()
-                                .fill(Color.brandDivider)
+                                .fill(Color.brandDivider(colorScheme))
                                 .frame(height: 4)
                             
                             Rectangle()
@@ -251,7 +255,7 @@ struct ScoreComponent: View {
             Spacer()
         }
         .padding(12)
-        .background(Color.brandBackground)
+        .background(Color.brandBackground(colorScheme))
         .cornerRadius(8)
     }
     
@@ -273,6 +277,7 @@ struct MuscleBalanceView: View {
     let upperBody: Double
     let lowerBody: Double
     let core: Double
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -312,6 +317,7 @@ struct MuscleGroupIndicator: View {
     let label: String
     let value: Double
     let icon: String
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 8) {
@@ -353,6 +359,7 @@ struct MuscleGroupIndicator: View {
 struct StatusBadge: View {
     let text: String
     let color: Color
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Text(text)
@@ -368,6 +375,7 @@ struct StatusBadge: View {
 
 struct TrendIndicator: View {
     let trend: FitScore.Trend
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Text(trend.rawValue)
@@ -391,6 +399,7 @@ struct TrendIndicator: View {
 // Tab Views
 struct OverviewTab: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -437,6 +446,7 @@ struct StatCard: View {
     let title: String
     let value: String
     let icon: String
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 8) {
@@ -447,7 +457,7 @@ struct StatCard: View {
             Text(value)
                 .font(BrandTypography.title3)
                 .fontWeight(.bold)
-                .foregroundColor(.brandText)
+                .foregroundColor(.brandText(colorScheme))
             
             Text(title)
                 .font(BrandTypography.caption1)
@@ -461,6 +471,7 @@ struct StatCard: View {
 
 struct SessionRowView: View {
     let session: Session
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack {
@@ -468,7 +479,7 @@ struct SessionRowView: View {
                 Text(session.workout.name)
                     .font(BrandTypography.subheadline)
                     .fontWeight(.medium)
-                    .foregroundColor(.brandText)
+                    .foregroundColor(.brandText(colorScheme))
                 
                 HStack {
                     Label("\(session.totalSets) sets", systemImage: "number")
@@ -493,6 +504,7 @@ struct SessionRowView: View {
 // Placeholder for other tabs
 struct ProgressTab: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         Text("Progress charts and graphs")
             .padding()
@@ -501,6 +513,7 @@ struct ProgressTab: View {
 
 struct SessionsTab: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         Text("Session history")
             .padding()
@@ -510,6 +523,7 @@ struct SessionsTab: View {
 struct MetricsTab: View {
     let client: Client
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @State private var showingAddMeasurement = false
     @State private var selectedMetricType = 0
     
@@ -546,6 +560,7 @@ struct MetricsTab: View {
 
 struct CurrentMeasurementsCard: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -570,6 +585,7 @@ struct MeasurementItem: View {
     let title: String
     let value: String
     let trend: Client.Trend
+    @Environment(\.colorScheme) var colorScheme
     
     var trendColor: Color {
         switch trend {
@@ -598,7 +614,7 @@ struct MeasurementItem: View {
             HStack {
                 Text(title)
                     .font(BrandTypography.caption1)
-                    .foregroundColor(.brandSecondaryText)
+                    .foregroundColor(.brandSecondaryText(colorScheme))
                 Spacer()
                 Image(systemName: trendIcon)
                     .font(BrandTypography.caption1)
@@ -610,13 +626,14 @@ struct MeasurementItem: View {
                 .fontWeight(.bold)
         }
         .padding(12)
-        .background(Color.brandBackground)
+        .background(Color.brandBackground(colorScheme))
         .cornerRadius(8)
     }
 }
 
 struct BodyCompositionCard: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -661,6 +678,7 @@ struct CompositionBar: View {
     let label: String
     let percentage: Double
     let color: Color
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(spacing: 8) {
@@ -689,6 +707,7 @@ struct CompositionBar: View {
 
 struct MeasurementHistoryView: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     @State private var selectedPeriod = 0
     
     var body: some View {
@@ -729,6 +748,7 @@ struct AddMeasurementView: View {
     let client: Client
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var weight: String = ""
     @State private var bodyFat: String = ""
@@ -987,6 +1007,7 @@ struct AddMeasurementView: View {
 
 struct NutritionTab: View {
     let client: Client
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         Text("Nutrition and lifestyle tracking")
             .padding()

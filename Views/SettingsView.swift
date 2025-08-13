@@ -14,35 +14,35 @@ struct SettingsView: View {
                     
                     Text("Professional Fitness Tracking")
                         .font(BrandTypography.subheadline)
-                        .foregroundColor(.brandSecondaryText)
+                        .foregroundColor(.brandSecondaryText(colorScheme))
                         .padding(.bottom, BrandSpacing.medium)
                 }
                 .frame(maxWidth: .infinity)
-                .background(Color.brandBackground)
+                .background(Color.brandBackground(colorScheme))
                 
                 Form {
                     Section {
                         HStack {
                             Label("Version", systemImage: "info.circle")
-                                .foregroundColor(.brandText)
+                                .foregroundColor(.brandText(colorScheme))
                             Spacer()
                             Text("1.0.0")
-                                .foregroundColor(.brandSecondaryText)
+                                .foregroundColor(.brandSecondaryText(colorScheme))
                         }
                         
                         HStack {
                             Label("Build", systemImage: "hammer")
-                                .foregroundColor(.brandText)
+                                .foregroundColor(.brandText(colorScheme))
                             Spacer()
                             Text("2025.1")
-                                .foregroundColor(.brandSecondaryText)
+                                .foregroundColor(.brandSecondaryText(colorScheme))
                         }
                     } header: {
                         Text("Application")
                             .font(BrandTypography.caption1)
                             .foregroundColor(.brandSageGreen)
                     }
-                    .listRowBackground(Color.brandCard)
+                    .listRowBackground(Color.brandCard(colorScheme))
                     
                     Section {
                         Toggle(isOn: $themeManager.isDarkMode) {
@@ -50,7 +50,7 @@ struct SettingsView: View {
                                 Image(systemName: themeManager.isDarkMode ? "moon.fill" : "sun.max.fill")
                                     .foregroundColor(.brandSageGreen)
                                 Text("Dark Mode")
-                                    .foregroundColor(.brandText)
+                                    .foregroundColor(.brandText(colorScheme))
                             }
                         }
                         .tint(.brandSageGreen)
@@ -59,7 +59,7 @@ struct SettingsView: View {
                             .font(BrandTypography.caption1)
                             .foregroundColor(.brandSageGreen)
                     }
-                    .listRowBackground(Color.brandCard)
+                    .listRowBackground(Color.brandCard(colorScheme))
                     
                     Section {
                         Button(action: {}) {
@@ -69,7 +69,7 @@ struct SettingsView: View {
                                 Spacer()
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
-                                    .foregroundColor(.brandSecondaryText)
+                                    .foregroundColor(.brandSecondaryText(colorScheme))
                             }
                         }
                         
@@ -85,16 +85,16 @@ struct SettingsView: View {
                             .font(BrandTypography.caption1)
                             .foregroundColor(.brandSageGreen)
                     }
-                    .listRowBackground(Color.brandCard)
+                    .listRowBackground(Color.brandCard(colorScheme))
                     
                     Section {
                         VStack(alignment: .leading, spacing: BrandSpacing.xSmall) {
                             Text("Together Fitness")
                                 .font(BrandTypography.headline)
-                                .foregroundColor(.brandText)
+                                .foregroundColor(.brandText(colorScheme))
                             Text("Personal Training Management System")
                                 .font(BrandTypography.caption1)
-                                .foregroundColor(.brandSecondaryText)
+                                .foregroundColor(.brandSecondaryText(colorScheme))
                             
                             HStack {
                                 BrandBadge(text: "Pro", color: .brandSageGreen)
@@ -108,10 +108,10 @@ struct SettingsView: View {
                             .font(BrandTypography.caption1)
                             .foregroundColor(.brandSageGreen)
                     }
-                    .listRowBackground(Color.brandCard)
+                    .listRowBackground(Color.brandCard(colorScheme))
                 }
                 .scrollContentBackground(.hidden)
-                .background(Color.brandBackground)
+                .background(Color.brandBackground(colorScheme))
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)

@@ -3,6 +3,7 @@ import SwiftData
 
 struct ExercisesView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query(sort: \Exercise.title) private var exercises: [Exercise]
     @State private var searchText = ""
     @State private var selectedBodyPart: String = "All"
@@ -40,7 +41,7 @@ struct ExercisesView: View {
                 // Search Bar
                 HStack {
                     Image(systemName: "magnifyingglass")
-                        .foregroundColor(.brandSecondaryText)
+                        .foregroundColor(.brandSecondaryText(colorScheme))
                     TextField("Search exercises...", text: $searchText)
                         .onSubmit {
                             showResults = true
@@ -52,7 +53,7 @@ struct ExercisesView: View {
                             showResults = false
                         }) {
                             Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.brandSecondaryText)
+                                .foregroundColor(.brandSecondaryText(colorScheme))
                         }
                     }
                     
@@ -62,11 +63,11 @@ struct ExercisesView: View {
                     .buttonStyle(BrandCompactButtonStyle(color: .brandSageGreen))
                 }
                 .padding(12)
-                .background(Color.brandBackground)
+                .background(Color.brandBackground(colorScheme))
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.brandDivider, lineWidth: 1)
+                        .stroke(Color.brandDivider(colorScheme), lineWidth: 1)
                 )
                 .padding()
                 
@@ -115,28 +116,28 @@ struct ExercisesView: View {
                             .foregroundColor(.brandLightGreen)
                         Text("Search Exercises")
                             .font(BrandTypography.title2)
-                            .foregroundColor(.brandText)
+                            .foregroundColor(.brandText(colorScheme))
                         Text("Enter a search term or select filters to find exercises")
                             .font(BrandTypography.subheadline)
-                            .foregroundColor(.brandSecondaryText)
+                            .foregroundColor(.brandSecondaryText(colorScheme))
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.brandBackground)
+                    .background(Color.brandBackground(colorScheme))
                 } else if filteredExercises.isEmpty {
                     EmptyExercisesView()
                 } else {
                     List(filteredExercises) { exercise in
                         ExerciseLibraryRow(exercise: exercise)
-                            .listRowBackground(Color.brandCard)
-                            .listRowSeparatorTint(.brandDivider)
+                            .listRowBackground(Color.brandCard(colorScheme))
+                            .listRowSeparatorTint(.brandDivider(colorScheme))
                             .onTapGesture {
                                 selectedExercise = exercise
                             }
                     }
                     .listStyle(PlainListStyle())
-                    .background(Color.brandBackground)
+                    .background(Color.brandBackground(colorScheme))
                 }
             }
             .navigationTitle("Exercise Library")
@@ -155,6 +156,7 @@ struct ExercisesView: View {
 
 struct ExerciseLibraryRow: View {
     let exercise: Exercise
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -175,7 +177,7 @@ struct ExerciseLibraryRow: View {
                             .foregroundColor(.brandCoral)
                         Text(String(format: "%.1f", exercise.rating))
                             .font(BrandTypography.caption1)
-                            .foregroundColor(.brandSecondaryText)
+                            .foregroundColor(.brandSecondaryText(colorScheme))
                     }
                 }
             }
@@ -196,6 +198,7 @@ struct ExerciseLibraryRow: View {
 struct ExerciseDetailSheet: View {
     let exercise: Exercise
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -284,6 +287,7 @@ struct ExerciseDetailSheet: View {
 struct InfoBadge: View {
     let icon: String
     let text: String
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         HStack(spacing: 4) {
@@ -301,6 +305,7 @@ struct InfoBadge: View {
 }
 
 struct EmptyExercisesView: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack(spacing: BrandSpacing.large) {
             Image(systemName: "dumbbell")
@@ -325,6 +330,7 @@ struct ExerciseFilterChip: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Button(action: action) {
@@ -333,12 +339,12 @@ struct ExerciseFilterChip: View {
                 .fontWeight(.medium)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(isSelected ? Color.brandSageGreen : Color.brandBackground)
-                .foregroundColor(isSelected ? .white : .brandText)
+                .background(isSelected ? Color.brandSageGreen : Color.brandBackground(colorScheme))
+                .foregroundColor(isSelected ? .white : .brandText(colorScheme))
                 .cornerRadius(16)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(isSelected ? Color.clear : Color.brandDivider, lineWidth: 1)
+                        .stroke(isSelected ? Color.clear : Color.brandDivider(colorScheme), lineWidth: 1)
                 )
         }
     }
